@@ -1,4 +1,5 @@
 This is a fork of https://github.com/fra589/grbl-Mega-5X.
-It has several changes to suit the 4-axis CNC Hot Wire foam cutter.
-The pre-complied software is located here https://rckeith.co.uk/download/grbl-hot-wire-firmware-and-software-v2-4/
-Use Xloader to upload the hex file details here https://rckeith.co.uk/electronics-build-guide-arduino-mega-2560-ramps-1-4/#step-2--firmware
+
+It has a modification with the homing orders. The original firmware home the 4 axis one by one, which may stretch the hotwire to extreme length and make some troubles. According to the modifications, the horizontal axis are homed at the same time, then are the vertical axis. You can also change the order due to your machine by modifying "config.h".
+
+You can use PlatformIO to build and upload the firmware.
