@@ -173,10 +173,10 @@
 // NOTE: Defaults are set for a traditional 3-axis CNC machine. Z-axis first to clear, followed by X & Y.
 #ifdef DEFAULTS_RAMPS_BOARD
   #if N_AXIS == 4 // 4 axis : homing
-    #define HOMING_CYCLE_0 (1<<AXIS_3) // Home Z axis first to clear workspace.
-    #define HOMING_CYCLE_1 (1<<AXIS_4) // Home 4th axis (A)
-    #define HOMING_CYCLE_2 (1<<AXIS_1) // Home X axis
-    #define HOMING_CYCLE_3 (1<<AXIS_2) // Home Y axis
+    #define HOMING_CYCLE_0 ((1<<AXIS_1)|(1<<AXIS_4)) // Home X and A axis first to clear workspace.
+    #define HOMING_CYCLE_1 ((1<<AXIS_2)|(1<<AXIS_3)) // Home Y and Z axis.
+    //#define HOMING_CYCLE_2 (1<<AXIS_1) // Home X axis
+    //#define HOMING_CYCLE_3 (1<<AXIS_2) // Home Y axis
   #elif N_AXIS == 5 // 5 axis : homing
     #define HOMING_CYCLE_0 (1<<AXIS_3) // Home Z axis first to clear workspace.
     #define HOMING_CYCLE_1 (1<<AXIS_4) // Home 4th axis (A)
